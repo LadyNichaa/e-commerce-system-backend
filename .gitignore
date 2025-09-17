@@ -1,0 +1,29 @@
+### IntelliJ IDEA ###
+.idea/
+*.iws
+*.iml
+*.ipr
+
+### Build Artifacts (ไฟล์ที่สร้างเมื่อ Build) ###
+# โฟลเดอร์ที่เก็บไฟล์ .class, .jar, .war ฯลฯ
+/target/
+*.class
+*.jar
+*.war
+*.ear
+
+### Logs & Temp Files ###
+*.log
+*.tmp
+*.temp
+/temp/
+
+### Operating System Files ###
+.DS_Store
+
+### Dependencies ###
+/mvn-wrapper/target/
+/src/**/target/
+/src/**/build/
+
+
