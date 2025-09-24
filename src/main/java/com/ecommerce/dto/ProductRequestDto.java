@@ -1,27 +1,27 @@
 package com.ecommerce.dto;
 
-import jakarta.validation.constraints.DecimalMin;
-import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
+import jakarta.validation.constraints.Size;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
+
 @Data
-@NoArgsConstructor
 public class ProductRequestDto {
     @NotBlank(message = "Product name cannot be blank")
     private String name;
 
+    @Size(max = 500)
     private String description;
 
     @NotNull(message = "Price is required")
-    @DecimalMin(value = "0.0", inclusive = false, message = "Price must be greater than zero")
-    // @DecimalMin: ตรวจสอบว่าราคาต้องมากกว่า 0
-    private double price;
+    @Positive(message = "Price must be a positive value")
+    private BigDecimal price;
 
     @NotNull(message = "Stock quantity is required")
-    @Min(value = 0, message = "Stock cannot be negative")
-    // @Min: ตรวจสอบว่าจำนวนสินค้าต้องมากกว่าหรือเท่ากับ 0
-    private int stock;
+    @Positive(message = "Price must be a positive value")
+    private Integer stock;
 }
